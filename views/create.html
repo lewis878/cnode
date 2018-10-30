@@ -1,0 +1,26 @@
+{{extend './layout.html'}}
+
+{{block 'header'}}
+<link rel="stylesheet" href="/public/css/create.css">
+<script src="/public/js/create.js"></script>
+{{/block}}
+
+{{block 'main'}}
+<div class="line">
+  <span>选择分类: </span>
+  <select id="select-tab">
+    <option value="share">分享</option>
+    <option value="ask">问答</option>
+    <option value="job">招聘</option>
+    <option value="dev">测试</option>
+  </select>
+  <button class="issue">发布</button>
+</div>
+<div class="title">
+  <input type="text" placeholder="标题,字数10字以上">
+</div>
+<div class="content">
+  <textarea placeholder="支持Markdown语法,请注意标记代码"></textarea>
+</div>
+<div class="alert"></div>
+{{/block}}

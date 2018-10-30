@@ -1,0 +1,81 @@
+{{extend './layout.html'}}
+
+{{block 'header'}}
+<link rel="stylesheet" href="/public/css/github-markdown.css">
+<link rel="stylesheet" href="/public/css/topic.css">
+<script src="/public/js/topic.js"></script>
+{{/block}}
+
+{{block 'main'}}
+<h2 class="title">{{topic.title}}</h2>
+<div class="author-info">
+  <img src="{{topic.author.avatar_url}}" width="50" height="50" class="avatar">
+  <div class="center">
+    <div class="info">
+      <span>{{topic.author.loginname}}</span>
+      <span>{{getLastTime(topic.create_at)}}</span>
+    </div>
+    {{if user.name === topic.author.loginname}}
+    <a class="edit-btn" href="/topic/{{topic.id}}/edit">编辑主题</a>
+    {{/if}}
+  </div>
+  <div class="right">
+    {{if user.id}}
+    <button id="collect-btn" is_collect="{{topic.is_collect}}" class="{{topic.is_collect? 'cancel': ''}}">
+      {{topic.is_collect? '取消收藏': '收藏'}}
+    </button>
+    {{/if}}
+    <div>
+      <span class="tag {{getTagInfo(topic).className}}">{{getTagInfo(topic).text}}</span>
+      <span>{{topic.visit_count}}次浏览</span>
+    </div>
+  </div>
+</div>
+<div class="topic-content markdown-body">{{@topic.content}}</div>
+{{if user.id}}
+<div class="comment-wrapper">
+  <div class="comment">
+    <textarea id="user-comment" placeholder="写下你的评论..."></textarea>
+    <div class="ctrl">
+      <button id="cancel" class="cancel">取消</button>
+      <button id="send" class="send">发送</button>
+    </div>
+  </div>
+</div>
+{{/if}}
+{{if topic.replies.length}}
+<h3 class="reply-count"><span>{{topic.reply_count}}</span> 回复</h3>
+<ul class="reply-list">
+  {{each topic.replies item index}}
+  <li>
+    <div class="top">
+      <a href="/user/{{item.author.loginname}}">
+        <img data-src="{{item.author.avatar_url}}" width="45" height="45" class="avatar">
+      </a>
+      <div class="center">
+        <div class="floor">
+          <span>#{{index+1}}</span>
+          {{if item.author.loginname === topic.author.loginname}}
+          <span class="is-author">作者</span>
+          {{/if}}
+        </div>
+        <span class="name">{{item.author.loginname}}</span> |
+        <span>{{getLastTime(item.create_at)}}</span>
+      </div>
+      <div class="right">
+        <span class="awesome">
+          <span class="num">{{item.ups.length>0? item.ups.length:''}}</span>
+          <i class="icon-awesome {{item.is_uped? 'active':''}}"></i>
+        </span>
+        <i class="icon-reply"></i>
+      </div>
+    </div>
+    <div class="content markdown-body">{{@item.content}}</div>
+    <input type="hidden" value="{{item.id}}">
+  </li>
+  {{/each}}
+</ul>
+{{/if}}
+<input type="hidden" id="topicId" value="{{topic.id}}">
+<div class="alert"></div>
+{{/block}}

@@ -1,0 +1,16 @@
+{{extend './layout.html'}}
+
+{{block 'header'}}
+<link rel="stylesheet" href="/public/css/login.css">
+<script src="/public/js/login.js"></script>
+{{/block}}
+
+{{block 'main'}}
+<div class="login">
+  <div class="login-box">
+    <input id="input" type="text" placeholder="access token" maxlength="36">
+    <button id="login">登 录</button>
+  </div>
+</div>
+<div class="alert"></div>
+{{/block}}

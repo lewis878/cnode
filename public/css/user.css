@@ -1,0 +1,103 @@
+.base {
+  position: relative;
+  overflow: hidden;
+}
+.base .bg {
+  height: 180px;
+  background: 50% 50% no-repeat;
+  background-size: cover;
+  filter: blur(20px);
+}
+.base .bg-mask,
+.base .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.base .bg-mask {
+  background: rgba(0,0,0,0.2);
+}
+.base .content {
+  text-align: center;
+  color: #f0f0f0;
+  padding: 20px;
+}
+.base .content .avatar {
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.base .content .sum {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.base .content .sum b {
+  color: #fff;
+}
+.recent {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  background: #fff;
+}
+.recent li {
+  flex: 1;
+  text-align: center;
+  line-height: 44px;
+  cursor: pointer;
+  border-bottom: 2px solid #e8e8e8;
+}
+.recent li:last-child {
+  border-left: 1px solid #e8e8e8;
+}
+.recent li.current {
+  color: #ff905b;
+  border-bottom-color: #ff905b;
+}
+.recent-topics,
+.recent-replies {
+  margin: 0 15px;
+}
+.recent-topics li,
+.recent-replies li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+}
+.recent-topics li .avatar,
+.recent-replies li .avatar {
+  border-radius: 50%;
+}
+.recent-topics li .info,
+.recent-replies li .info {
+  flex: 1;
+  margin-left: 10px;
+  min-width: 0;
+}
+.recent-topics li .info .topic-title,
+.recent-replies li .info .topic-title {
+  font-size: 16px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.recent-topics li .info .desc,
+.recent-replies li .info .desc {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.recent-topics .no-data,
+.recent-replies .no-data {
+  padding: 20px;
+  text-align: center;
+}
+.recent-topics .no-data i,
+.recent-replies .no-data i {
+  font-size: 50px;
+}

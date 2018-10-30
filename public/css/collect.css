@@ -1,0 +1,67 @@
+.topic-list li {
+  margin: 0 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+.topic-list li:last-child {
+  border-bottom: none;
+}
+.topic-list li .title {
+  display: flex;
+  align-items: center;
+}
+.topic-list li .title .tag {
+  line-height: 1;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 4px;
+  background: #ff1493;
+  color: #fff;
+}
+.topic-list li .title .tag.top {
+  background: #ed3931;
+}
+.topic-list li .title .tag.good {
+  background: #ed713a;
+}
+.topic-list li .title .tag.share {
+  background: rgba(128,189,1,0.7);
+}
+.topic-list li .title .tag.ask {
+  background: #459eff;
+}
+.topic-list li .title .tag.job {
+  background: #7b77ed;
+}
+.topic-list li .title .tag.dev {
+  background: #eda08a;
+}
+.topic-list li .title .text {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.topic-list li .content {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.topic-list li .content .avatar {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.topic-list li .content .info {
+  flex: 1;
+}
+.topic-list li .content .info p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.topic-list li .content .info p span > b {
+  color: rgba(128,189,1,0.7);
+}

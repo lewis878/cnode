@@ -1,0 +1,219 @@
+.title {
+  margin: 10px 15px;
+  padding: 5px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.author-info {
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+}
+.author-info .avatar {
+  border-radius: 50%;
+}
+.author-info .center {
+  flex: 1;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+.author-info .center .info > span {
+  display: block;
+}
+.author-info .center .edit-btn {
+  margin-left: 10px;
+  padding: 0 10px;
+  height: 43px;
+  line-height: 43px;
+  background: #ff905b;
+  border-radius: 4px;
+  color: #fff;
+}
+.author-info .right {
+  display: flex;
+  align-items: center;
+}
+.author-info .right #collect-btn {
+  margin-right: 10px;
+  padding: 0 15px;
+  height: 43px;
+  background: rgba(128,189,1,0.7);
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+.author-info .right #collect-btn.cancel {
+  background: #f0f0f0;
+  color: #666;
+}
+.author-info .right span {
+  display: block;
+}
+.author-info .right .tag {
+  line-height: 1;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 4px;
+  background: #ff1493;
+  color: #fff;
+  text-align: center;
+}
+.author-info .right .tag.top {
+  background: #ed3931;
+}
+.author-info .right .tag.good {
+  background: #ed713a;
+}
+.author-info .right .tag.share {
+  background: rgba(128,189,1,0.7);
+}
+.author-info .right .tag.ask {
+  background: #459eff;
+}
+.author-info .right .tag.job {
+  background: #7b77ed;
+}
+.author-info .right .tag.dev {
+  background: #eda08a;
+}
+.topic-content {
+  margin-top: 10px;
+  padding: 10px 15px;
+}
+.topic-content p {
+  color: #555;
+}
+.topic-content pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.comment-wrapper {
+  padding: 0 15px;
+}
+.comment.between {
+  margin-top: 10px;
+}
+.comment textarea {
+  resize: none;
+  width: 100%;
+  height: 150px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  border: 1px solid rgba(128,189,1,0.7);
+  padding: 8px;
+}
+.comment .ctrl {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.comment .ctrl button {
+  cursor: pointer;
+}
+.comment .ctrl .cancel {
+  margin-right: 20px;
+  color: #666;
+  background: transparent;
+}
+.comment .ctrl .send {
+  padding: 8px 20px;
+  background: rgba(128,189,1,0.7);
+  color: #fff;
+  border-radius: 37px;
+}
+.reply-count {
+  margin: 0 15px;
+  padding: 10px 0;
+  font-size: 16px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.reply-count span {
+  font-weight: bold;
+  color: rgba(128,189,1,0.7);
+}
+.reply-list li {
+  margin: 0 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+.reply-list li:last-child {
+  border-bottom: none;
+}
+.reply-list li .top {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.reply-list li .top .avatar {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.reply-list li .top .center {
+  flex: 1;
+}
+.reply-list li .top .center .floor {
+  margin-bottom: 5px;
+}
+.reply-list li .top .center .is-author {
+  margin-left: 10px;
+  line-height: 1;
+  padding: 3px 10px;
+  background: rgba(128,189,1,0.7);
+  border-radius: 4px;
+  font-size: 12px;
+  color: #fff;
+}
+.reply-list li .top .center .name {
+  font-weight: bold;
+}
+.reply-list li .top .right {
+  display: flex;
+  align-items: center;
+}
+.reply-list li .top .right i {
+  font-size: 20px;
+  cursor: pointer;
+}
+.reply-list li .top .right .awesome {
+  margin-right: 15px;
+}
+.reply-list li .top .right .awesome .active {
+  color: rgba(128,189,1,0.7);
+}
+.reply-list li .content {
+  margin-top: 10px;
+}
+.reply-list li .content img {
+  max-width: 100%;
+}
+.reply-list li .content pre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.reply-list li .content p {
+  margin-bottom: 0;
+  color: #555;
+  font-size: 14px;
+}
+.reply-list li .comment {
+  margin-top: 10px;
+}
+.alert {
+  position: fixed;
+  z-index: 98;
+  top: -44px;
+  left: 0;
+  right: 0;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  transition: top 0.3s ease;
+}
+.alert.show {
+  top: 0;
+}

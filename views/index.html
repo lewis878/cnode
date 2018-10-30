@@ -1,0 +1,36 @@
+{{extend './layout.html'}}
+{{block 'header'}}
+<script src="/public/js/index.js"></script>
+<link rel="stylesheet" href="/public/css/index.css">
+{{/block}}
+{{block 'main'}}
+<ul class="topic-list">
+  {{each topics item}}
+  <li>
+    <a href="/topic/{{item.id}}" target="_blank">
+      <h2 class="title">
+        <span class="tag {{getTagInfo(item).className}}">{{getTagInfo(item).text}}</span>
+        <span class="text">{{item.title}}</span>
+      </h2>
+      <div class="content">
+        <img data-src="{{item.author.avatar_url}}" width="40" height="40" class="avatar">
+        <div class="info">
+          <p>
+            <span>{{item.author.loginname}}</span>
+            <span><b>{{item.reply_count}}</b> /{{item.visit_count}}</span>
+          </p>
+          <p>
+            <time>{{getLastTime(item.create_at)}}</time>
+            <time>{{getLastTime(item.last_reply_at)}}</time>
+          </p>
+        </div>
+      </div>
+    </a>
+  </li>
+  {{/each}}
+</ul>
+<div class="loading">
+  <img src="/public/image/loading.gif" width="24" height="24">
+  <span>正在加载...</span>
+</div>
+{{/block}}

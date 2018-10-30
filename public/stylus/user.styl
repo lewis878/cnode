@@ -1,0 +1,79 @@
+@import "var.styl"
+.base
+  position: relative
+  overflow: hidden
+  .bg
+    height: 180px
+    background: 50% 50% no-repeat
+    background-size: cover
+    filter: blur(20px)
+  .bg-mask, .content
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+  .bg-mask
+    background: rgba(0, 0, 0, 0.2)
+  .content
+    text-align: center
+    color: #f0f0f0
+    padding: 20px
+    .avatar
+      border-radius 50%
+      margin-bottom: 20px
+    .sum
+      display: flex
+      align-items: center
+      justify-content: space-between
+      b
+        color: #fff
+
+.recent
+  display: flex
+  align-items: center
+  height: 44px
+  background: #fff
+  li
+    flex: 1
+    text-align: center
+    line-height: 44px
+    cursor: pointer
+    border-bottom: 2px solid #e8e8e8
+    &:last-child
+      border-left: 1px solid #e8e8e8
+    &.current
+      color: $color-sub-theme
+      border-bottom-color:$color-sub-theme
+
+
+.recent-topics, .recent-replies
+  margin: 0 15px
+  li
+    padding: 10px 0
+    border-bottom: $border
+    display: flex
+    align-items: center
+    .avatar
+      border-radius 50%
+    .info
+      flex: 1
+      margin-left: 10px
+      min-width: 0
+      .topic-title
+        font-size: 16px
+        font-weight: bold
+        overflow: hidden
+        text-overflow ellipsis
+        white-space nowrap
+      .desc
+        margin-top: 5px
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+  .no-data
+    padding: 20px
+    text-align: center
+    i
+      font-size: 50px

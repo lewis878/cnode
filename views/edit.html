@@ -1,0 +1,28 @@
+{{extend './layout.html'}}
+
+{{block 'header'}}
+<link rel="stylesheet" href="/public/css/create.css">
+<script src="/public/js/edit.js"></script>
+{{/block}}
+
+{{block 'main'}}
+<div class="line">
+  <span>选择分类: </span>
+  <select id="select-tab">
+    {{each tabOptions item}}
+    <option value="{{item.value}}" selected="{{topicData.tab === item.value? 'selected':''}}">{{item.text}}</option>
+    {{/each}}
+  </select>
+  <button class="issue">提交</button>
+</div>
+<div class="title">
+  <input type="text" value="{{topicData.title}}" placeholder="标题,字数10字以上">
+</div>
+<div class="content">
+  <textarea placeholder="支持Markdown语法,请注意标记代码">
+    {{topicData.content}}
+  </textarea>
+</div>
+<div class="alert"></div>
+<input id="topic_id" type="hidden" value="{{topicData.id}}">
+{{/block}}

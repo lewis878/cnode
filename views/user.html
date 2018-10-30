@@ -1,0 +1,72 @@
+{{extend './layout.html'}}
+
+{{block 'header'}}
+<link rel="stylesheet" href="/public/css/user.css">
+<script src="/public/js/user.js"></script>
+{{/block}}
+
+{{block 'main'}}
+<div class="base">
+  <div class="bg" style="background-image: url({{userInfo.avatar_url}})"></div>
+  <div class="bg-mask"></div>
+  <div class="content">
+    <img src="{{userInfo.avatar_url}}" width="100" height="100" class="avatar">
+    <div class="sum">
+      <span>用户名: <b>{{userInfo.loginname}}</b></span>
+      <span>注册时间: <b>{{getLastTime(userInfo.create_at)}}</b></span>
+      <span>积分: <b>{{userInfo.score}}</b></span>
+    </div>
+  </div>
+</div>
+
+<ul class="recent">
+  <li class="current">最近创建的话题</li>
+  <li>最近参与的话题</li>
+</ul>
+<div class="topic-container">
+  <div class="recent-topics">
+    {{if userInfo.recent_topics.length}}
+    <ul>
+      {{each userInfo.recent_topics item}}
+      <li>
+        <a href="/user/{{item.author.loginname}}">
+          <img src="{{item.author.avatar_url}}" width="40" height="40" class="avatar">
+        </a>
+        <a class="info" href="/topic/{{item.id}}">
+          <h3 class="topic-title">{{item.title}}</h3>
+          <div class="desc">
+            <span>{{item.author.loginname}}</span>
+            <span>{{getLastTime(item.last_reply_at)}}</span>
+          </div>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+    {{else}}
+    <div class="no-data"><i class="icon-no-data"></i><p>暂无数据</p></div>
+    {{/if}}
+  </div>
+  <div class="recent-replies" style="display: none;">
+    {{if userInfo.recent_replies.length}}
+    <ul>
+      {{each userInfo.recent_replies item}}
+      <li>
+        <a href="/user/{{item.author.loginname}}">
+          <img src="{{item.author.avatar_url}}" width="40" height="40" class="avatar">
+        </a>
+        <a class="info" href="/topic/{{item.id}}">
+          <h3 class="topic-title">{{item.title}}</h3>
+          <div class="desc">
+            <span>{{item.author.loginname}}</span>
+            <span>{{getLastTime(item.last_reply_at)}}</span>
+          </div>
+        </a>
+      </li>
+      {{/each}}
+    </ul>
+    {{else}}
+    <div class="no-data"><i class="icon-no-data"></i><p>暂无数据</p></div>
+    {{/if}}
+  </div>
+</div>
+{{/block}}

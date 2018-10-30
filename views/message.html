@@ -1,0 +1,15 @@
+{{extend './layout.html'}}
+
+{{block 'header'}}
+<link rel="stylesheet" href="/public/css/message.css">
+{{/block}}
+
+{{block 'main'}}
+<ul class="recent">
+  <li class="current">未读消息</li>
+  <li>已读消息</li>
+</ul>
+<div class="messages">
+  <div class="no-data"><i class="icon-no-data"></i><p>暂无数据</p></div>
+</div>
+{{/block}}

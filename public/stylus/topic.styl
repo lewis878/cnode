@@ -1,0 +1,202 @@
+@import "var.styl"
+.title
+  margin: 10px 15px
+  padding: 5px
+  background: #f0f0f0
+  border-radius 5px
+  font-size: 18px
+  font-weight: bold
+
+.author-info
+  padding: 0 15px
+  display: flex
+  align-items: center
+  .avatar
+    border-radius 50%
+  .center
+    flex: 1
+    margin-left: 10px
+    display: flex
+    align-items: center
+    .info > span
+      display: block
+    .edit-btn
+      margin-left: 10px
+      padding: 0 10px
+      height: 43px
+      line-height: 43px
+      background: $color-sub-theme
+      border-radius 4px
+      color: #fff
+
+  .right
+    display: flex
+    align-items: center
+    #collect-btn
+      &.cancel
+        background: #f0f0f0
+        color: #666
+      margin-right: 10px
+      padding: 0 15px
+      height: 43px
+      background: $color-theme
+      border-radius 4px
+      color: #fff
+      cursor: pointer
+
+    span
+      display: block
+    .tag
+      line-height: 1
+      font-size: 12px
+      padding: 5px
+      border-radius 4px
+      background: deeppink
+      color: #fff
+      text-align: center
+      &.top
+        background: #ed3931
+      &.good
+        background: #ed713a
+      &.share
+        background: $color-theme
+      &.ask
+        background: #459eff
+      &.job
+        background: #7b77ed
+      &.dev
+        background: #eda08a
+
+.topic-content
+  margin-top: 10px
+  padding: 10px 15px
+  p
+    color: #555
+  pre
+    overflow-x auto
+    -webkit-overflow-scrolling touch
+
+.comment-wrapper
+  padding: 0 15px
+
+.comment
+  &.between
+    margin-top: 10px
+  textarea
+    resize none
+    width: 100%
+    height: 150px
+    background: #f0f0f0
+    border-radius 5px
+    border: 1px solid $color-theme
+    padding: 8px
+  .ctrl
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    button
+      cursor: pointer
+    .cancel
+      margin-right: 20px
+      color: #666
+      background: transparent
+    .send
+      padding: 8px 20px
+      background: $color-theme
+      color: #fff
+      border-radius 37px
+
+.reply-count
+  margin: 0 15px
+  padding: 10px 0
+  font-size: 16px
+  border-bottom: $border
+  span
+    font-weight: bold
+    color: $color-theme
+
+.reply-list
+  li
+    margin: 0 15px
+    padding: 10px 0
+    border-bottom: $border
+    &:last-child
+      border-bottom: none
+    .top
+      display: flex
+      align-items: center
+      font-size: 14px
+      .avatar
+        border-radius 50%
+        margin-right: 10px
+      .center
+        flex: 1
+        .floor
+          margin-bottom: 5px
+        .is-author
+          margin-left: 10px
+          line-height: 1
+          padding: 3px 10px
+          background: $color-theme
+          border-radius 4px
+          font-size: 12px
+          color: #fff
+        .name
+          font-weight: bold
+      .right
+        display: flex
+        align-items: center
+        i
+          font-size: 20px
+          cursor: pointer
+        .awesome
+          margin-right: 15px
+          .active
+            color: $color-theme
+
+    .content
+      margin-top: 10px
+      img
+        max-width: 100%
+      pre
+        overflow-x auto
+        -webkit-overflow-scrolling touch
+      p
+        margin-bottom: 0
+        color: #555
+        font-size: 14px
+
+    .comment
+      margin-top: 10px
+.alert
+  &.show
+    top: 0
+  position: fixed
+  z-index: 98
+  top: -44px
+  left: 0
+  right: 0
+  height: 44px
+  text-align: center
+  line-height: 44px
+  background: rgba(0, 0, 0, 0.7)
+  color: #fff
+  transition top 0.3s ease
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

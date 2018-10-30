@@ -1,0 +1,27 @@
+.recent {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  background: #fff;
+}
+.recent li {
+  flex: 1;
+  text-align: center;
+  line-height: 44px;
+  cursor: pointer;
+  border-bottom: 2px solid #e8e8e8;
+}
+.recent li:last-child {
+  border-left: 1px solid #e8e8e8;
+}
+.recent li.current {
+  color: #ff905b;
+  border-bottom-color: #ff905b;
+}
+.no-data {
+  padding: 20px;
+  text-align: center;
+}
+.no-data i {
+  font-size: 50px;
+}
